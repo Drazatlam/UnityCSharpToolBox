@@ -1,5 +1,5 @@
 
-public class AStarNode<T>
+public class AStarNode<T> where T:IAStar<T>
 	{
 	public T t;
 	public AStarNode<T> parent;
@@ -12,7 +12,7 @@ public class AStarNode<T>
 		if (parent == null)
 			return 0;
 		else
-			return 1+parent.Cost();
+			return t.Cost()+parent.Cost();
 	}
 }
 
